@@ -39,5 +39,3 @@ class Image:
         gray = cv2.cvtColor(self.img, cv2.COLOR_RGB2GRAY)
         cv2.imwrite(self.dir_path+self.filename.split('.')[0]+"_gray."+self.filename.split('.')[-1], gray)
     
-im = Image("")
-im.canny_edge()

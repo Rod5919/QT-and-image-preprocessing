@@ -19,12 +19,14 @@ class Ui_MainWindow(object):
         MainWindow.resize(640, 480)
         self.imagepath = "images/base.png"
         self.valid = False
+        #region css
         f = open("css/style.css", "r")
         self.style = f.read()
         f.close()
         f = open("css/buttonStyle.css", "r")
         self.button_style = f.read()
         f.close()
+        #endregion css
         self.main_window = MainWindow
         self.setupUi()
     
@@ -157,6 +159,16 @@ class Ui_MainWindow(object):
         self.pushButton_4.setEnabled(self.valid)
         self.pushButton_5.setEnabled(self.valid)
         self.pushButton_6.setEnabled(self.valid)
+         
+        # Cambia la imagen a mostrar
+        pixmap = QPixmap(self.imagepath).scaledToWidth(350)
+        self.img_label.setPixmap(pixmap)
+        
+        # Asigna los textos de las etiquetas
+        self.label.setText("Filtros")
+        self.label_2.setText("Ruta")
+        self.label_3.setText("Proyecto Final IMT-231")
+        self.label_4.setText("Gabriela Ana Zubieta")
         
         # Genera interacción con los botones
         try:
@@ -168,26 +180,17 @@ class Ui_MainWindow(object):
             self.pushButton_6.clicked.connect(lambda: self.change_image(self.im.grayscale,"_gray."))
         except:
             pass
-        
-        # Cambia la imagen a mostrar
-        pixmap = QPixmap(self.imagepath).scaledToWidth(350)
-        self.img_label.setPixmap(pixmap)
-        
-        # Asigna los textos de las etiquetas
-        self.label.setText("Filtros")
-        self.label_2.setText("Ruta")
-        self.label_3.setText("Proyecto Final IMT-231")
-        self.label_4.setText("Gabriela Ana Zubieta")
 
     def validator(self):
         path = self.lineEdit.text()
         dir_path = '/'.join(path.split('/')[:-1])+'/'
-        if path in glob.glob(dir_path+'*'):
+        
+        if path in glob.glob(dir_path+'*'): #Verifica si laa imagen existe
             self.valid = True
             self.imagepath = path
             self.im = Image(path)
             self.retranslateUi()
-        else:
+        else: # Mensaje de error y deshabilita botones
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Critical)
             msg.setText("No existe la imagen.\nRuta incorrecta")
@@ -197,6 +200,7 @@ class Ui_MainWindow(object):
             self.retranslateUi()
             
     def change_image(self, function, suffix):
+        # Verifica si ya se realizó la función
         if not(self.im.dir_path+self.im.filename.split(".")[0]+suffix+self.im.filename.split(".")[-1] in glob.glob(self.im.dir_path+'*')):
             function()
         self.imagepath = self.im.dir_path+self.im.filename.split(".")[0]+suffix+self.im.filename.split(".")[-1]

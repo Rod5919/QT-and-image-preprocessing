@@ -47,9 +47,11 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(480, 190, 81, 17))
         self.label.setObjectName("label")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(480, 390, 67, 17))
         self.label_2.setObjectName("label_2")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(20, 20, 161, 17))
         self.label_3.setObjectName("label_3")
@@ -60,6 +62,9 @@ class Ui_MainWindow(object):
         "padding: 5px 0;")
         self.label_4.setObjectName("label_4")
         #endregion labels
+        
+        self.lineEdit = QtWidgets.QLineEdit(self.main_window)
+        self.lineEdit.setGeometry(QtCore.QRect(360, 30, 170, 25))
         
         self.main_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(self.main_window)

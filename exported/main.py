@@ -34,6 +34,7 @@ class Ui_MainWindow(object):
         self.pushButton_6.setObjectName("pushButton_6")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(480, 190, 81, 17))
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(480, 390, 67, 17))

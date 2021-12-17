@@ -41,6 +41,9 @@ class Ui_MainWindow(object):
         self.pushButton_7 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_7.setGeometry(QtCore.QRect(530, 10, 89, 25))
         self.pushButton_7.setObjectName("pushButton_7")
+        self.pushButton_8 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_8.setGeometry(QtCore.QRect(530, 80, 89, 25))
+        self.pushButton_8.setObjectName("pushButton_8")
         #endregion buttons
         
         #region labels
@@ -86,10 +89,12 @@ class Ui_MainWindow(object):
         self.pushButton_4.setText("Blur")
         self.pushButton_5.setText("Gaussian")
         self.pushButton_6.setText("Grayscale")
+        self.pushButton_7.setText("X")
+        self.pushButton_8.setText("OK")
+        
         self.label.setText("Filters")
         self.label_2.setText("Path")
         self.label_3.setText("Proyecto Final IMT-231")
-        self.pushButton_7.setText("X")
         self.label_4.setText("Gabriela Zubieta")
 
 

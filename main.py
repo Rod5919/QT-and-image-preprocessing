@@ -21,38 +21,38 @@ class Ui_MainWindow(object):
         
         #region buttons
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(420, 230, 89, 25))
+        self.pushButton.setGeometry(QtCore.QRect(390, 190, 89, 25))
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(540, 230, 89, 25))
+        self.pushButton_2.setGeometry(QtCore.QRect(510, 120, 89, 25))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(420, 280, 89, 25))
+        self.pushButton_3.setGeometry(QtCore.QRect(390, 120, 89, 25))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.setGeometry(QtCore.QRect(540, 280, 89, 25))
+        self.pushButton_4.setGeometry(QtCore.QRect(510, 190, 89, 25))
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_5.setGeometry(QtCore.QRect(420, 330, 89, 25))
+        self.pushButton_5.setGeometry(QtCore.QRect(390, 260, 89, 25))
         self.pushButton_5.setObjectName("pushButton_5")
         self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_6.setGeometry(QtCore.QRect(540, 330, 89, 25))
+        self.pushButton_6.setGeometry(QtCore.QRect(510, 260, 89, 25))
         self.pushButton_6.setObjectName("pushButton_6")
         self.pushButton_7 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_7.setGeometry(QtCore.QRect(530, 10, 89, 25))
         self.pushButton_7.setObjectName("pushButton_7")
         self.pushButton_8 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_8.setGeometry(QtCore.QRect(530, 80, 89, 25))
+        self.pushButton_8.setGeometry(QtCore.QRect(530, 390, 89, 25))
         self.pushButton_8.setObjectName("pushButton_8")
         #endregion buttons
         
         #region labels
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(480, 190, 81, 17))
+        self.label.setGeometry(QtCore.QRect(450, 80, 81, 17))
         self.label.setObjectName("label")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(480, 390, 67, 17))
+        self.label_2.setGeometry(QtCore.QRect(460, 320, 67, 17))
         self.label_2.setObjectName("label_2")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
@@ -67,7 +67,7 @@ class Ui_MainWindow(object):
         #endregion labels
         
         self.lineEdit = QtWidgets.QLineEdit(self.main_window)
-        self.lineEdit.setGeometry(QtCore.QRect(360, 30, 170, 25))
+        self.lineEdit.setGeometry(QtCore.QRect(410, 340, 170, 25))
         
         self.main_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(self.main_window)
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.label.setText("Filters")
         self.label_2.setText("Path")
         self.label_3.setText("Proyecto Final IMT-231")
-        self.label_4.setText("Gabriela Zubieta")
+        self.label_4.setText("Gabriela Ana Zubieta")
 
 
 if __name__ == "__main__":
@@ -105,4 +105,3 @@ if __name__ == "__main__":
     ui = Ui_MainWindow(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-

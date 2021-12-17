@@ -19,7 +19,6 @@ class Ui_MainWindow(object):
         MainWindow.resize(640, 480)
         self.imagepath = "images/base.png"
         self.valid = False
-        self.applied = [0,0,0,0,0,0]
         f = open("css/style.css", "r")
         self.style = f.read()
         f.close()
@@ -86,8 +85,6 @@ class Ui_MainWindow(object):
         self.pushButton_8.setIconSize(QtCore.QSize(45, 45))
         self.pushButton_8.setStyleSheet("border-radius:30px\noverflow:hidden;")
         self.pushButton_8.clicked.connect(self.validator)
-        
-        #TODO: add QIcon
         #endregion buttons
         
         #region labels
@@ -183,7 +180,6 @@ class Ui_MainWindow(object):
         self.label_4.setText("Gabriela Ana Zubieta")
 
     def validator(self):
-        self.applied = [0,0,0,0,0,0]
         path = self.lineEdit.text()
         dir_path = '/'.join(path.split('/')[:-1])+'/'
         if path in glob.glob(dir_path+'*'):

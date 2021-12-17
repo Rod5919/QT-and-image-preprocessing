@@ -160,12 +160,12 @@ class Ui_MainWindow(object):
         
         # Genera interacción con los botones
         try:
-            self.pushButton.clicked.connect(lambda: self.change_image(0,self.applied[0],self.im.median,"."))
-            self.pushButton_2.clicked.connect(lambda: self.change_image(1,self.applied[1],self.im.median,"_median."))
-            self.pushButton_3.clicked.connect(lambda: self.change_image(2,self.applied[2],self.im.canny_edge,"_canny."))
-            self.pushButton_4.clicked.connect(lambda: self.change_image(3,self.applied[3],self.im.blur,"_blur."))
-            self.pushButton_5.clicked.connect(lambda: self.change_image(4,self.applied[4],self.im.gaussian,"_gaussian."))
-            self.pushButton_6.clicked.connect(lambda: self.change_image(5,self.applied[5],self.im.grayscale,"_gray."))
+            self.pushButton.clicked.connect(lambda: self.change_image(self.im.median,"."))
+            self.pushButton_2.clicked.connect(lambda: self.change_image(self.im.median,"_median."))
+            self.pushButton_3.clicked.connect(lambda: self.change_image(self.im.canny_edge,"_canny."))
+            self.pushButton_4.clicked.connect(lambda: self.change_image(self.im.blur,"_blur."))
+            self.pushButton_5.clicked.connect(lambda: self.change_image(self.im.gaussian,"_gaussian."))
+            self.pushButton_6.clicked.connect(lambda: self.change_image(self.im.grayscale,"_gray."))
         except:
             pass
         
@@ -193,10 +193,11 @@ class Ui_MainWindow(object):
             msg.setText("No existe la imagen.\nRuta incorrecta")
             msg.setWindowTitle("ERROR")
             msg.exec_()
+            self.valid = False
+            self.retranslateUi()
             
-    def change_image(self, index, applied, function, suffix):
+    def change_image(self, function, suffix):
         if not(self.im.dir_path+self.im.filename.split(".")[0]+suffix+self.im.filename.split(".")[-1] in glob.glob(self.im.dir_path+'*')):
-            print("Image does not exist")
             function()
         self.imagepath = self.im.dir_path+self.im.filename.split(".")[0]+suffix+self.im.filename.split(".")[-1]
         self.retranslateUi()
